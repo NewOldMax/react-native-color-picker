@@ -37,6 +37,7 @@ export class HoloColorPicker extends React.PureComponent<
   private _pageY: number;
   private _isRTL: boolean;
   private _pickerResponder: PanResponderInstance;
+  private pickerContainer: React.RefObject<View>;
 
   constructor(props: IHoloPickerProps, ctx: any) {
     super(props, ctx);
@@ -64,6 +65,7 @@ export class HoloColorPicker extends React.PureComponent<
       onStart: this._handleColorChange,
       onMove: this._handleColorChange,
     });
+    this.pickerContainer = React.createRef()
   }
 
   _getColor() {
@@ -119,8 +121,8 @@ export class HoloColorPicker extends React.PureComponent<
     // we always measure because layout is the same even though picker is moved on the page
     InteractionManager.runAfterInteractions(() => {
       // measure only after (possible) animation ended
-      this.refs.pickerContainer &&
-        (this.refs.pickerContainer as any).measure(
+      this.pickerContainer.current &&
+        (this.pickerContainer.current as any).measure(
           (
             x: number,
             y: number,
@@ -210,7 +212,7 @@ export class HoloColorPicker extends React.PureComponent<
       <View style={style}>
         <View
           onLayout={this._onLayout}
-          ref="pickerContainer"
+          ref={this.pickerContainer}
           style={styles.pickerContainer}
         >
           {!pickerSize ? null : (

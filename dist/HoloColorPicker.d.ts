@@ -18,6 +18,7 @@ export declare class HoloColorPicker extends React.PureComponent<IHoloPickerProp
     private _pageY;
     private _isRTL;
     private _pickerResponder;
+    private pickerContainer;
     constructor(props: IHoloPickerProps, ctx: any);
     _getColor(): HsvColor;
     _onColorSelected(): void;
