@@ -1,9 +1,9 @@
-export declare type HsvColor = {
+export type HsvColor = {
     h: number;
     s: number;
     v: number;
 };
-export declare type Point2D = {
+export type Point2D = {
     x: number;
     y: number;
 };

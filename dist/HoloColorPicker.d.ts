@@ -1,14 +1,14 @@
 import React from "react";
 import Slider from "@react-native-community/slider";
 import { HsvColor, IPickerProps, Point2D } from "./typeHelpers";
-declare type SliderProps = {
+type SliderProps = {
     onValueChange?: (value: number) => void;
     value?: number;
 };
 export interface IHoloPickerProps extends IPickerProps {
     sliderComponent?: React.Component<SliderProps>;
 }
-export declare type IHoloPickerState = {
+export type IHoloPickerState = {
     color: HsvColor;
     pickerSize: number;
 };
@@ -42,9 +42,9 @@ export declare class HoloColorPicker extends React.PureComponent<IHoloPickerProp
     _handleColorChange: ({ x, y }: Point2D) => boolean;
     _computeHValue(x: number, y: number): number;
     _hValueToRad(deg: number): number;
-    _getSlider(): typeof Slider;
+    _getSlider(): typeof Slider | any;
     getColor(): string;
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 export {};
 //# sourceMappingURL=HoloColorPicker.d.ts.map

@@ -4,7 +4,7 @@ export interface ITrianglePickerProps extends IPickerProps {
     rotationHackFactor?: number;
     hideControls?: boolean;
 }
-export declare type ITrianglePickerState = {
+export type ITrianglePickerState = {
     color: HsvColor;
     pickerSize: number;
 };
@@ -15,6 +15,7 @@ export declare class TriangleColorPicker extends React.PureComponent<ITrianglePi
     private _isRTL;
     private _pickerResponder;
     private _changingHColor;
+    private pickerContainerRef;
     static defaultProps: ITrianglePickerProps;
     constructor(props: ITrianglePickerProps, ctx: any);
     _getColor(): HsvColor;
@@ -49,6 +50,6 @@ export declare class TriangleColorPicker extends React.PureComponent<ITrianglePi
         s: any;
         v: any;
     };
-    render(): JSX.Element;
+    render(): React.JSX.Element;
 }
 //# sourceMappingURL=TriangleColorPicker.d.ts.map

@@ -12,7 +12,7 @@ export declare function toHsv(color: string): HsvColor;
  * @return {string} color in hexa representation
  */
 export declare function fromHsv(hsv: HsvColor): string;
-declare type PanResponderCallback = ({ x, y }: Point2D, event: GestureResponderEvent, state: PanResponderGestureState) => boolean;
+type PanResponderCallback = ({ x, y }: Point2D, event: GestureResponderEvent, state: PanResponderGestureState) => boolean;
 /**
  * Simplified pan responder wrapper.
  */
